@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {}
+    "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {}
   },
   "projects": {
-    "c:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {
+    "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
+        "projectUniqueName": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
         "projectName": "microsoft.frontcli",
-        "projectPath": "c:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
+        "projectPath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
         "packagesPath": "C:\\Users\\pigie\\.nuget\\packages\\",
-        "outputPath": "c:\\Jose\\M2\\DevNative\\frontend_cli\\obj\\",
+        "outputPath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pigie\\AppData\\Roaming\\NuGet\\NuGet.Config",

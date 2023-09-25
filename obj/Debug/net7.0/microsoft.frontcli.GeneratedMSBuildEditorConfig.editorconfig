@@ -7,5 +7,5 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = microsoft.frontcli
+build_property.RootNamespace = mjj
 build_property.ProjectDir = c:\Jose\M2\DevNative\frontend_cli\

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WHeYu3V1aZ4QyE6Sl7KCXscAPcq+zBFC+mXLKXn7swWlxEyRQGQNLqM5SjVikTM0lU7YSWLBVOPc60AiajVrRQ==",
+  "dgSpecHash": "Q7W3HJn5kPCRI+Gw/2wPYP8eB0f0b1pW8aVvTEsiVWcMvnRfIknCXXEoXDu6peP8BDpeuE6CHAiJ5xGwfRoOMg==",
   "success": true,
-  "projectFilePath": "c:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
+  "projectFilePath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pigie\\.nuget\\packages\\cliwrap\\3.6.4\\cliwrap.3.6.4.nupkg.sha512",
     "C:\\Users\\pigie\\.nuget\\packages\\dotenv.net\\3.1.2\\dotenv.net.3.1.2.nupkg.sha512",
