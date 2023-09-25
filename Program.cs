@@ -25,11 +25,8 @@ internal class Program
                 htmlTemplate(projectName, contenu);
             }
 
-            // Nom de la variable d'environnement que vous souhaitez récupérer
-            string variableName = "CHAT_GPT_KEY";
-
             // Récupérer la valeur de la variable d'environnement
-            string? variableValue = Environment.GetEnvironmentVariable(variableName);
+            string? variableValue = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
 
             if (variableValue != null)
             {
@@ -41,10 +38,6 @@ internal class Program
                 Console.WriteLine(response); */
                 var result = await api.ImageGenerations.CreateImageAsync("A drawing of a flowers");
                 Console.WriteLine(result.Data[0].Url);
-            }
-            else
-            {
-                Console.WriteLine($"La variable d'environnement {variableName} n'est pas définie.");
             }
         }
     }
