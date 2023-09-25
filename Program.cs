@@ -1,11 +1,10 @@
-using System.Reflection;
-using CliWrap;
+using OpenAI_API;
+using OpenAI_API.Images;
 
 namespace microsoft.botsay;
-
 internal class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         //string databaseUrl = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
         Console.Write("Ecris ! : ");
@@ -37,7 +36,14 @@ internal class Program
 
             if (variableValue != null)
             {
-                Console.WriteLine($"La valeur de la variable {variableName} est : {variableValue}");
+                OpenAIAPI api = new OpenAIAPI(variableValue);
+                var chat = api.Chat.CreateConversation();
+                //chat.AppendSystemMessage("What is the number after 10 ?");
+                /* chat.AppendUserInput("Give me a picture of flowers");
+                string response = await chat.GetResponseFromChatbotAsync();
+                Console.WriteLine(response); */
+                var result = await api.ImageGenerations.CreateImageAsync("A drawing of a flowers");
+                Console.WriteLine(result.Data[0].Url);
             }
             else
             {
@@ -102,7 +108,7 @@ body{
         string cheminFichier = "test.js";
         string contenuCss = @"
 function writeSomething(){
-    window.alert('Hello world!');
+    alert('Hello world!');
 }
 ";
         try
