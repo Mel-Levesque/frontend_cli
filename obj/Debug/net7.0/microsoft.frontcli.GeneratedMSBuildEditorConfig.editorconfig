@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = microsoft.frontcli
-build_property.ProjectDir = d:\MDS\Dev_Natif\projet_template\frontend_cli\
+build_property.ProjectDir = c:\Jose\M2\DevNative\frontend_cli\

@@ -36,3 +36,16 @@ D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\CliWrap.dll
 D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\OpenAI.API.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\CliWrap.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Http.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\OpenAI_API.dll
