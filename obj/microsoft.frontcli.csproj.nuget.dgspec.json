@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {}
+    "D:\\MDS\\Dev_Natif\\projet_template\\frontend_cli\\microsoft.frontcli.csproj": {}
   },
   "projects": {
-    "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {
+    "D:\\MDS\\Dev_Natif\\projet_template\\frontend_cli\\microsoft.frontcli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
+        "projectUniqueName": "D:\\MDS\\Dev_Natif\\projet_template\\frontend_cli\\microsoft.frontcli.csproj",
         "projectName": "microsoft.frontcli",
-        "projectPath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
-        "packagesPath": "C:\\Users\\pigie\\.nuget\\packages\\",
-        "outputPath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\obj\\",
+        "projectPath": "D:\\MDS\\Dev_Natif\\projet_template\\frontend_cli\\microsoft.frontcli.csproj",
+        "packagesPath": "C:\\Users\\melim\\.nuget\\packages\\",
+        "outputPath": "D:\\MDS\\Dev_Natif\\projet_template\\frontend_cli\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pigie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\melim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,9 +44,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "CliWrap": {
+              "target": "Package",
+              "version": "[3.6.4, )"
+            },
             "Dotenv.Net": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "OpenAI.Api": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
