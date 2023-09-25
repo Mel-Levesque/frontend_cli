@@ -1,4 +1,4 @@
+function writeSomething () {
+  window.alert('Hello world!')
+        }
 
-function writeSomething(){
-    window.alert('Hello world!');
-}

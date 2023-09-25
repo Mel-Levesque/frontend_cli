@@ -1,4 +1,84 @@
+using System.Text.Encodings.Web;
 
+public static class Template
+{
+    public static string Htmltp(string filename)
+    {
+        return $@"
+<!DOCTYPE html>
+<html lang=""en"">
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <title>Your Landing Page</title>
+    <link rel=""stylesheet"" href=""./{filename}.css"">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class=""logo"">
+                <h1>Your Logo</h1>
+            </div>
+            <ul class=""nav-links"">
+                <li><a href=""#features"">Features</a></li>
+                <li><a href=""#about"">About</a></li>
+                <li><a href=""#contact"">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id=""hero"">
+        <div class=""hero-content"">
+            <h1>Massa tincidunt dui ut ornare molestie nunc.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href=""#contact"" class=""cta-button"">Get Started</a>
+        </div>
+    </section>
+
+    <section id=""feature1"">
+        <div class=""feature1-content"">
+            <h2>Feature 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
+        </div>
+        <div class=""feature1-image"">
+            <img src=""../images/businessman.png"" alt=""About"">
+        </div>
+    </section>
+
+    <section id=""feature2"">
+        <img src=""../images/businessman.png"" alt=""About"">
+        <div class=""about-content2"">
+            <h2>Feature 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
+        </div>
+    </section>
+
+    <section id=""feature3"">
+        <div class=""feature1-content"">
+            <h2>Feature 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
+        </div>
+        <div class=""feature1-image"">
+            <img src=""../images/businessman.png"" alt=""About"">
+        </div>
+    </section>
+
+    <section id=""contact"">
+        <h2>Contact Us</h2>
+        <a class=""cta-button"">Get Started</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</body>
+</html>
+";
+    }
+
+    public static string Csstp()
+    {
+        return @"
 /* Reset some default styles */
 * {
     margin: 0;
@@ -161,8 +241,8 @@ form label {
     font-weight: bold;
 }
 
-form input[type="text"],
-form input[type="email"],
+form input[type=""text""],
+form input[type=""email""],
 form textarea {
     width: 100%;
     padding: 10px;
@@ -171,7 +251,7 @@ form textarea {
     border-radius: 5px;
 }
 
-form button[type="submit"] {
+form button[type=""submit""] {
     background-color: #ff6600;
     color: #fff;
     padding: 10px 20px;
@@ -213,5 +293,8 @@ footer {
     .nav-links li {
         margin: 0;
         margin-bottom: 10px;
+    }
+}
+";
     }
 }
