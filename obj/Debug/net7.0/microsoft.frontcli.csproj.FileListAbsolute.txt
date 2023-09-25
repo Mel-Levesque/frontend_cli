@@ -33,3 +33,6 @@ D:\MDS\Dev_Natif\projet_template\frontend_cli\obj\Debug\net7.0\microsoft.frontcl
 D:\MDS\Dev_Natif\projet_template\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.genruntimeconfig.cache
 D:\MDS\Dev_Natif\projet_template\frontend_cli\obj\Debug\net7.0\ref\microsoft.frontcli.dll
 D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\CliWrap.dll
+D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\MDS\Dev_Natif\projet_template\frontend_cli\bin\Debug\net7.0\OpenAI.API.dll

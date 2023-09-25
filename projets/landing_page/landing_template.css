@@ -87,10 +87,19 @@ nav {
     flex-basis: 30%;
 }
 
-.feature2 {
-    text-align: center;
-    /* flex-basis: 30%; */
+#feature2 {
     display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+#feature2 img {
+    margin-right: 10px;
+}
+
+#feature2 .about-content2 {
+    height: 100%;
 }
 
 .feature img {
@@ -99,7 +108,7 @@ nav {
 }
 
 /* Style the about section */
-#about {
+#feature1, #feature3 {
     background-color: #fff;
     text-align: center;
     padding: 80px 0;
@@ -108,27 +117,26 @@ nav {
     align-items: center; /* Center the content vertically */
 }
 
-.about-content {
+.feature1-content {
     max-width: 600px; /* Adjust the width as needed */
     text-align: left; /* Align text to the left */
     margin-right: 20px; /* Add space between text and image */
 }
 .about-content2 {
-    position: relative;
     max-width: 600px; /* Adjust the width as needed */
-    text-align: left; /* Align text to the left */
+    text-align: right; /* Align text to the left */
     margin-right: 20px; /* Add space between text and image */
 }
 
-.about-image {
+.feature1-image {
     max-width: 400px; /* Adjust the width as needed */
 }
 
-.about-image2 {
+/* .about-image2 {
     flex: 0 0 auto;
     margin-right: 10px;
-    max-width: 400px; /* Adjust the width as needed */
-}
+    max-width: 400px; /* Adjust the width as needed
+} */
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
@@ -142,12 +150,6 @@ nav {
         max-width: 100%; /* Make content full-width on smaller screens */
         margin: 0; /* Reset margin for stacking */
     }
-}
-
-#feature2 {
-    background-color: #fff;
-    text-align: center;
-    padding: 80px 0;
 }
 
 /* Style the contact section */

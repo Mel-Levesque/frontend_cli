@@ -6,27 +6,23 @@ internal class Program
 {
     static async Task Main(string[] args)
     {
-        //string databaseUrl = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
+        Console.WriteLine("html [nom du projet] [texte a afficher]");
         Console.Write("Ecris ! : ");
         string? text = Console.ReadLine();
         if (text is not null && text.Trim() != "")
         {
-            string[] words = text.Trim().Split(' ', 2);
+            string[] words = text.Trim().Split(' ', 3);
 
             if (words[0] == "html")
             {
-                string contenu = words.Length < 2 ? "Pas de consigne" : words[1];
-                cssTemplate();
-                javascriptTemplate();
-                htmlTemplate(contenu);
-            }
+                string contenu = words.Length < 3 ? "Pas de consigne" : words[2];
+                string projectName = words[1];
 
-            // if(text.Contains("html")){
-            //     var result = Cli.Wrap("wsl")
-            //     .WithArguments(new[] {"touch", "index.html"})
-            //     .ExecuteAsync();
-            // }
-            //touch index.html
+                createFolder(projectName);
+                cssTemplate(projectName);
+                javascriptTemplate(projectName);
+                htmlTemplate(projectName, contenu);
+            }
 
             // Nom de la variable d'environnement que vous souhaitez récupérer
             string variableName = "CHAT_GPT_KEY";
@@ -52,25 +48,12 @@ internal class Program
         }
     }
 
-    static void htmlTemplate(string contenu)
+    static void htmlTemplate(string projectName, string contenu)
     {
-        string cheminFichier = "test.html";
-        string contenuHtml = $@"
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Mon premier fichier HTML en C#</title>
-        <link href='./test.css' rel='stylesheet' />
-        <script type='text/javascript' src='./test.js'></script>
-    </head>
-    <body>
-        <h1>Bienvenue dans mon fichier HTML généré en C#!</h1>
-        <p>C'est simple et amusant.</p>
-        <p>{contenu}</p>
-        <button onclick='writeSomething()'>Cliquer ici</button>
-    </body>
-</html>
-";
+        //string cheminFichier = projectName + ".html";
+        string cheminFichier = "./projects/" + projectName + "/" + projectName + ".html";
+
+        string contenuHtml = Template.Htmltp(projectName);
         try
         {
             File.WriteAllText(cheminFichier, contenuHtml);
@@ -82,15 +65,11 @@ internal class Program
         }
     }
 
-    static void cssTemplate()
+    static void cssTemplate(string projectName)
     {
-        string cheminFichier = "test.css";
-        string contenuCss = @"
-body{
-    background-color: black;
-    color: white;
-}
-";
+        string cheminFichier = "./projects/" + projectName + "/" + projectName + ".css";
+
+        string contenuCss = Template.Csstp();
 
         try
         {
@@ -103,22 +82,39 @@ body{
         }
     }
 
-    static void javascriptTemplate()
+    static void javascriptTemplate(string projectName)
     {
-        string cheminFichier = "test.js";
-        string contenuCss = @"
-function writeSomething(){
-    alert('Hello world!');
-}
-";
+        string cheminFichier = "./projects/" + projectName + "/" + projectName + ".js";
+        string contenuJs = @"
+        function writeSomething(){
+            window.alert('Hello world!');
+        }
+        ";
+
+        //string contenuCss = Template.JsTp();
+
         try
         {
-            File.WriteAllText(cheminFichier, contenuCss);
+            File.WriteAllText(cheminFichier, contenuJs);
             Console.WriteLine($"Fichier Css '{cheminFichier}' créé avec succès.");
         }
         catch (IOException e)
         {
             Console.WriteLine($"Une erreur s'est produite : {e.Message}");
+        }
+    }
+
+    //Create sub Folder in 'projects' folder with the project name
+    static void createFolder(string projectName)
+    {
+        if (!Directory.Exists("projects"))
+        {
+            Directory.CreateDirectory("projects");
+        }
+        string dirProject = "projects/" + projectName;
+        if (!Directory.Exists(dirProject))
+        {
+            Directory.CreateDirectory(dirProject);
         }
     }
 }
