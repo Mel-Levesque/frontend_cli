@@ -1,0 +1,17 @@
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.csproj.AssemblyReference.cache
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.GeneratedMSBuildEditorConfig.editorconfig
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.AssemblyInfoInputs.cache
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.AssemblyInfo.cs
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.csproj.CoreCompileInputs.cache
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\microsoft.frontcli.exe
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\microsoft.frontcli.deps.json
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\microsoft.frontcli.runtimeconfig.json
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\microsoft.frontcli.dll
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\microsoft.frontcli.pdb
+C:\Jose\M2\DevNative\frontend_cli\bin\Debug\net7.0\dotenv.net.dll
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.csproj.CopyComplete
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.dll
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\refint\microsoft.frontcli.dll
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.pdb
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\microsoft.frontcli.genruntimeconfig.cache
+C:\Jose\M2\DevNative\frontend_cli\obj\Debug\net7.0\ref\microsoft.frontcli.dll

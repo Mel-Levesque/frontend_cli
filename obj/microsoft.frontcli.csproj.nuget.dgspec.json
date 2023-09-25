@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MDS\\Dev_Natif\\coursCsharp\\cli_app\\microsoft.frontcli\\microsoft.frontcli.csproj": {}
+    "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {}
   },
   "projects": {
-    "D:\\MDS\\Dev_Natif\\coursCsharp\\cli_app\\microsoft.frontcli\\microsoft.frontcli.csproj": {
+    "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MDS\\Dev_Natif\\coursCsharp\\cli_app\\microsoft.frontcli\\microsoft.frontcli.csproj",
+        "projectUniqueName": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
         "projectName": "microsoft.frontcli",
-        "projectPath": "D:\\MDS\\Dev_Natif\\coursCsharp\\cli_app\\microsoft.frontcli\\microsoft.frontcli.csproj",
-        "packagesPath": "C:\\Users\\melim\\.nuget\\packages\\",
-        "outputPath": "D:\\MDS\\Dev_Natif\\coursCsharp\\cli_app\\microsoft.frontcli\\obj\\",
+        "projectPath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
+        "packagesPath": "C:\\Users\\pigie\\.nuget\\packages\\",
+        "outputPath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\melim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\pigie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Dotenv.Net": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

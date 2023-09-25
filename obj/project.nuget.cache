@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4ljHB92XBLsFzHxj9u6S6haDRKv3W7BGnHiLj3QwxNRdCDLi5rRbNkmcFbWBx7G4l2BI1bFElSKUQw0HWkYYnw==",
+  "dgSpecHash": "XCPB0KH+ma3JnR8LrnlIK7bKeC6ze0/FEjMLNh+2gDLMZVt8LH7FXRnQG9k5Aub8ZiuJAMiwjb1CJX71SJsVzw==",
   "success": true,
-  "projectFilePath": "D:\\MDS\\Dev_Natif\\coursCsharp\\cli_app\\microsoft.frontcli\\microsoft.frontcli.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Jose\\M2\\DevNative\\frontend_cli\\microsoft.frontcli.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pigie\\.nuget\\packages\\dotenv.net\\3.1.2\\dotenv.net.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
