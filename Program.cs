@@ -42,7 +42,7 @@ internal class Program
             string path = "./projects/" + projectName + "/" + projectName + ".html";
             string templateString = File.ReadAllText(path);
             chat.AppendSystemMessage("Tu es un expert html qui remplace tous les textes en latin, Lorem ipsum, en anglais, les titres et noms de fonctionnalités par du texte en français correspondant au thème donné. Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'>.");
-            chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + contenu + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'> template:" + templateString);
+            chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + contenu + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'>. Ne pas changer les balises <img> et la ligne <h1>Your Logo</h1>. template:" + templateString);
             string response = await chat.GetResponseFromChatbotAsync();
             Console.WriteLine(response);
             File.WriteAllText(path, response);
@@ -65,17 +65,22 @@ internal class Program
             Match match3 = regex3.Match(contenuFichier);
             string p3 = match3.Groups[1].Value;
         
-            var image1 = await api.ImageGenerations.CreateImageAsync("Find me an image related to this paragraph : " + p1);
+            var logo = await api.ImageGenerations.CreateImageAsync("Find me an logo in url related to this theme : " + projectName);
+            string logo1 = logo.Data[0].Url;
+            contenuFichier = contenuFichier.Replace(@"<h1>Votre Logo</h1>", @"<img src='"+ logo1 +"' alt=""About"">");
+            File.WriteAllText(cheminFichier, contenuFichier);
+
+            var image1 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p1);
             string url1 = image1.Data[0].Url;
             contenuFichier = contenuFichier.Replace(@"src=""cheminImage1""", @"src='"+ url1 +"'");
             File.WriteAllText(cheminFichier, contenuFichier);
 
-            var image2 = await api.ImageGenerations.CreateImageAsync("Find me an image related to this paragraph : " + p2);
+            var image2 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p2);
             string url2 = image2.Data[0].Url;
             contenuFichier = contenuFichier.Replace(@"src=""cheminImage2""", @"src='"+ url2 +"'");
             File.WriteAllText(cheminFichier, contenuFichier);
 
-            var image3 = await api.ImageGenerations.CreateImageAsync("Find me an image related to this paragraph : " + p3);
+            var image3 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p3);
             string url3 = image3.Data[0].Url;
             contenuFichier = contenuFichier.Replace(@"src=""cheminImage3""", @"src='"+ url3 +"'");
             File.WriteAllText(cheminFichier, contenuFichier);
