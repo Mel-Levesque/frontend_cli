@@ -66,7 +66,7 @@ internal class Program
         
             var logo = await api.ImageGenerations.CreateImageAsync("Find me an logo in url related to this theme : " + projectName);
             string logo1 = logo.Data[0].Url;
-            contenuFichier = contenuFichier.Replace(@"<h1>Votre Logo</h1>", @"<img src='"+ logo1 +"' alt=""About"">");
+            contenuFichier = contenuFichier.Replace(@"<h1>Votre Logo</h1>", $@"<img src={logo} alt=""About"">");
             File.WriteAllText(cheminFichier, contenuFichier);
 
             var image1 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p1);
