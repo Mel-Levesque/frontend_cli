@@ -15,15 +15,15 @@ internal class Program
         */
         string[] argumentList = Environment.GetCommandLineArgs();
         string projectName = string.Join(" ", argumentList.Skip(1).Take(1));
-        string contenu = string.Join( " ", argumentList.Skip(2).Take(argumentList.Length - 1));
+        string contenu = string.Join(" ", argumentList.Skip(2).Take(argumentList.Length - 1));
         createFolder(projectName);
         cssTemplate(projectName);
         javascriptTemplate(projectName);
         htmlTemplate(projectName, contenu);
-        await OpenApiData(projectName, words);
+        await OpenApiData(projectName, contenu);
     }
 
-    static async Task OpenApiData(string projectName, string[] words)
+    static async Task OpenApiData(string projectName, string contenu)
     {
         // Nom de la variable d'environnement que vous souhaitez récupérer
         string variableName = "CHAT_GPT_KEY";
@@ -38,7 +38,7 @@ internal class Program
             string path = "./projects/" + projectName + "/" + projectName + ".html";
             string templateString = File.ReadAllText(path);
             chat.AppendSystemMessage("Tu es un expert html qui remplace tous les textes en latin, Lorem ipsum, en anglais, les titres et noms de fonctionnalités par du texte en français correspondant au thème donné. Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'>.");
-            chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + words[2] + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'> template:" + templateString);
+            chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + contenu + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'> template:" + templateString);
             string response = await chat.GetResponseFromChatbotAsync();
             Console.WriteLine(response);
             File.WriteAllText(path, response);

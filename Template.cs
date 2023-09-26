@@ -373,9 +373,10 @@ footer {
     #endregion
 
     #region js template
-    public static string jstp(string img1, string img2, string img3)
-    {
-        return $@"document.getElementById('img1').src="img1"; document.getElementById('img2').src="img2"; document.getElementById('img3').src="img3";";
-    }
+    // public static string jstp(string img1, string img2, string img3)
+    // {
+    //     return $@"
+    // document.getElementById('img1').src="img1"; document.getElementById('img2').src="img2"; document.getElementById('img3').src="img3";";
+    // }
     #endregion
 }
