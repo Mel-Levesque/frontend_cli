@@ -15,8 +15,9 @@ internal class Program
 
             if (words[0] == "html")
             {
+                string projectName = words.Length < 2 ? "project" : words[1];
                 string contenu = words.Length < 3 ? "Pas de consigne" : words[2];
-                string projectName = words[1];
+
 
                 createFolder(projectName);
                 cssTemplate(projectName);
