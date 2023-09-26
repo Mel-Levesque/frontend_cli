@@ -1,0 +1,57 @@
+.card{
+    border-radius: 5%;
+}
+
+.card::after{
+    display: grid;
+    color: antiquewhite;
+    background-color: darkcyan;
+}
+
+#newProject{
+    background-color: antiquewhite;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "a a a a a"
+                         "b c d e f";
+  }
+
+.grid-item {
+    background: rgb(114, 44, 81);
+    padding: 1em;
+    border: 2px solid #fff;
+    text-align:center;
+    font-size:35px;
+    border-radius: 5%;
+    transition: 0.5s;
+}
+
+.grid-item:hover {
+    color: antiquewhite;
+    background-color: black;
+    cursor: pointer;
+}
+
+.a {
+    grid-area: a;
+    background-color: antiquewhite;
+  }
+
+.a:hover{
+    color: antiquewhite;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+button{
+    background-color: antiquewhite;
+    border-radius: 5%;
+}
+
+button:hover{
+    background-color: black;
+    color: antiquewhite;
+    border-radius: 5%;
+}
