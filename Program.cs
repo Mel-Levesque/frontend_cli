@@ -6,40 +6,35 @@ internal class Program
 {
     static async Task Main(string[] args)
     {
-        Console.WriteLine("html [nom du projet] [texte a afficher]");
-        Console.Write("Ecris ! : ");
-        string? text = Console.ReadLine();
-        if (text is not null && text.Trim() != "")
+        /*
+        * Nom du projet
+        * Texte qui explique le projet
+        *
+        * Exemple :
+        * mjj Nom_du_projet Desctiption du projet avec autant d'espaces que tu veux
+        */
+        string[] argumentList = Environment.GetCommandLineArgs();
+        string projectName = string.Join(" ", argumentList.Skip(1).Take(1));
+        string contenu = string.Join( " ", argumentList.Skip(2).Take(argumentList.Length - 1));
+        createFolder(projectName);
+        cssTemplate(projectName);
+        javascriptTemplate(projectName);
+        htmlTemplate(projectName, contenu);
+
+        // Récupérer la valeur de la variable d'environnement
+        /* string? variableValue = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
+
+        if (variableValue != null)
         {
-            string[] words = text.Trim().Split(' ', 3);
-
-            if (words[0] == "html")
-            {
-                string projectName = words.Length < 2 ? "project" : words[1];
-                string contenu = words.Length < 3 ? "Pas de consigne" : words[2];
-                
-
-                createFolder(projectName);
-                cssTemplate(projectName);
-                javascriptTemplate(projectName);
-                htmlTemplate(projectName, contenu);
-            }
-
-            // Récupérer la valeur de la variable d'environnement
-            string? variableValue = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
-
-            if (variableValue != null)
-            {
-                OpenAIAPI api = new OpenAIAPI(variableValue);
-                var chat = api.Chat.CreateConversation();
-                //chat.AppendSystemMessage("What is the number after 10 ?");
-                /* chat.AppendUserInput("Give me a picture of flowers");
-                string response = await chat.GetResponseFromChatbotAsync();
-                Console.WriteLine(response); */
-                var result = await api.ImageGenerations.CreateImageAsync("A drawing of a flowers");
-                Console.WriteLine(result.Data[0].Url);
-            }
-        }
+            OpenAIAPI api = new OpenAIAPI(variableValue);
+            var chat = api.Chat.CreateConversation();
+            //chat.AppendSystemMessage("What is the number after 10 ?");
+            /* chat.AppendUserInput("Give me a picture of flowers");
+            string response = await chat.GetResponseFromChatbotAsync();
+            Console.WriteLine(response); */
+            /*var result = await api.ImageGenerations.CreateImageAsync("A pack of flowers");
+            Console.WriteLine(result.Data[0].Url);
+        } */
     }
 
     static void htmlTemplate(string projectName, string contenu)
