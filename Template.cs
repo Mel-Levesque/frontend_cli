@@ -174,7 +174,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 nav {
@@ -183,11 +183,19 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
+    height: 100px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+    height: 100%;
+}
+
+.logo img {
+    object-fit: contain;
+    max-height: 100%;
 }
 
 .nav-links {
@@ -359,7 +367,7 @@ footer {
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     header {
-        padding: 10px 0;
+        padding: 10px;
     }
 
     .nav-links {
