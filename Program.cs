@@ -10,29 +10,43 @@ internal class Program
 {
     static async Task Main(string[] args)
     {
-        Console.WriteLine("html [nom du projet] [texte a afficher]");
-        Console.Write("Ecris ! : ");
-        string? text = Console.ReadLine();
-        if (text is not null && text.Trim() != "")
-        {
-            string[] words = text.Trim().Split(' ', 3);
-            string projectName = words.Length < 2 ? "project" : words[1];
-            string codeHtml = "";
+        /*
+        * Nom du projet
+        * Texte qui explique le projet
+        *
+        * Exemple :
+        * mjj Nom_du_projet Desctiption du projet avec autant d'espaces que tu veux
+        */
+        string[] argumentList = Environment.GetCommandLineArgs();
+        string projectName = string.Join(" ", argumentList.Skip(1).Take(1));
+        string contenu = string.Join(" ", argumentList.Skip(2).Take(argumentList.Length - 1));
+        createFolder(projectName);
+        cssTemplate(projectName);
+        javascriptTemplate(projectName);
+        htmlTemplate(projectName, contenu);
+        await OpenApiData(projectName, contenu);
+    }
 
-            if (words[0] == "html")
-            {
-                string contenu = words.Length < 3 ? "Pas de consigne" : words[2];               
-                createFolder(projectName);
-                cssTemplate(projectName);
-                javascriptTemplate(projectName);
-                htmlTemplate(projectName, contenu);
-            }
+    static async Task OpenApiData(string projectName, string contenu)
+    {
+        // Nom de la variable d'environnement que vous souhaitez récupérer
+        string variableName = "CHAT_GPT_KEY";
 
-            // Récupérer la valeur de la variable d'environnement
-            string? variableValue = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
+        // Récupérer la valeur de la variable d'environnement
+        string? variableValue = Environment.GetEnvironmentVariable(variableName);
 
             if (variableValue != null)
             {
+                OpenAIAPI api = new OpenAIAPI(variableValue);
+                var chat = api.Chat.CreateConversation();
+                string path = "./projects/" + projectName + "/" + projectName + ".html";
+                string templateString = File.ReadAllText(path);
+                chat.AppendSystemMessage("Tu es un expert html qui remplace tous les textes en latin, Lorem ipsum, en anglais, les titres et noms de fonctionnalités par du texte en français correspondant au thème donné. Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'>.");
+                chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + contenu + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'> template:" + templateString);
+                string response = await chat.GetResponseFromChatbotAsync();
+                Console.WriteLine(response);
+                File.WriteAllText(path, response);
+
                 string cheminFichier = "./projects/" + projectName + "/" + projectName + ".html";
                 string contenuFichier = File.ReadAllText(cheminFichier);
 
@@ -50,13 +64,7 @@ internal class Program
                 Regex regex3 = new Regex(pattern3, RegexOptions.Singleline);
                 Match match3 = regex3.Match(contenuFichier);
                 string p3 = match3.Groups[1].Value;
-                
-                OpenAIAPI api = new OpenAIAPI(variableValue);
-                var chat = api.Chat.CreateConversation();
-                //chat.AppendSystemMessage("What is the number after 10 ?");
-                /* chat.AppendUserInput("Give me a picture of flowers");
-                string response = await chat.GetResponseFromChatbotAsync();
-                Console.WriteLine(response); */
+            
                 var image1 = await api.ImageGenerations.CreateImageAsync("Find me an image related to this paragraph : " + p1);
                 string url1 = image1.Data[0].Url;
                 contenuFichier = contenuFichier.Replace(@"src=""imgToReplace1""", @"src='"+ url1 +"'");
@@ -71,7 +79,6 @@ internal class Program
                 string url3 = image3.Data[0].Url;
                 contenuFichier = contenuFichier.Replace(@"src=""imgToReplace3""", @"src='"+ url3 +"'");
                 File.WriteAllText(cheminFichier, contenuFichier);
-
             }
         }
     }
