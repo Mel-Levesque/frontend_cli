@@ -42,28 +42,28 @@ public static class Template
     <section id=""feature1"">
         <div class=""feature1-content"">
             <h2>Feature 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
+            <p id=""p1"">Les fleurs, véritables joyaux de la nature, captivent par leur diversité de couleurs, de formes et de fragrances. Elles incarnent la beauté éphémère et la délicatesse de la vie. Chaque espèce de fleur raconte son histoire, de la rose romantique à la tulipe élégante, en passant par le soleil éclatant du tournesol. Les fleurs ajoutent une touche de poésie et d'émerveillement à notre monde, symbolisant l'amour, la grâce et la vitalité.</p>
         </div>
         <div class=""feature1-image"">
-            <img src=""../images/businessman.png"" alt=""About"">
+            <img src=""imageARemplacer1"" alt=""About"">
         </div>
     </section>
 
     <section id=""feature2"">
-        <img src=""../images/businessman.png"" alt=""About"">
+        <img src=""imageARemplacer2"" alt=""About"">
         <div class=""about-content2"">
             <h2>Feature 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
+            <p id=""p2"">Le sport transcende les frontières et les cultures, unifiant les individus dans la passion du mouvement et de l'excellence. Il incarne la discipline, le dévouement et la persévérance. Que ce soit sur un terrain de football, dans une piscine olympique, sur un court de tennis ou dans un stade de basketball, le sport est un véritable spectacle d'efforts humains et de compétition loyale. Il enseigne des leçons de vie inestimables telles que le travail d'équipe, la gestion du stress et la résilience.</p>
         </div>
     </section>
 
     <section id=""feature3"">
         <div class=""feature1-content"">
             <h2>Feature 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
+            <p  id=""p3"">La mode est un langage silencieux qui exprime notre individualité, notre créativité et notre identité. Elle évolue au fil du temps, reflétant les tendances culturelles, historiques et sociales. Des couleurs vives aux coupes innovantes, la mode est un moyen de se démarquer et de raconter notre histoire au monde. Elle unit les stylistes, les passionnés et les créateurs dans un vaste univers où l'art et la passion se rencontrent pour créer des pièces uniques et intemporelles.</p>
         </div>
         <div class=""feature1-image"">
-            <img src=""../images/businessman.png"" alt=""About"">
+            <img src=""imageARemplacer3"" alt=""About"">
         </div>
     </section>
 
