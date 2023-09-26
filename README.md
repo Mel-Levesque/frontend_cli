@@ -1,4 +1,4 @@
-#Consigne :
+# Consigne :
 
 Choper un clé API pour OpenAi API et la mettre dans les variables d'environnement de la machine sous le nom "CHAT_GPT_KEY"\
 
