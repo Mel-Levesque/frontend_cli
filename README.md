@@ -20,3 +20,10 @@ dotnet pack mjj.csproj && dotnet tool update --global --add-source nupkg/ mjj
 ```
 
 Le cli est maintenant disponible et appelable par la commande ```mjj```
+
+
+Application Electron
+Se rendre dans le dossier electron-app puis exécuter la commande:
+```
+npm run start
+```
