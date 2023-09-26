@@ -2,6 +2,10 @@ using System.Text.Encodings.Web;
 
 public static class Template
 {
+
+    #region html template
+
+
     public static string Htmltp(string filename)
     {
         return $@"
@@ -76,6 +80,74 @@ public static class Template
 ";
     }
 
+    public static string Htmltp2()
+    {
+        return @"<!DOCTYPE html>
+<html lang=""en"">
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <title>Your Landing Page</title>
+    <link rel=""stylesheet"" href=""./autre.css"">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class=""nav-links"">
+                <li><a href=""#features"">Features</a></li>
+                <li><a href=""#about"">About</a></li>
+                <li><a href=""#contact"">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id=""hero"">
+        <div class=""hero-content"">
+            <h1>Welcome to Our Landing Page</h1>
+            <p>Discover amazing products and services that will change your life.</p>
+            <a href=""#contact"" class=""cta-button"">Get Started</a>
+        </div>
+    </section>
+
+    <section id=""features"">
+        <div class=""feature"">
+            <img src=""../images/feature1.png"" alt=""Feature 1"">
+            <h2>Feature 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class=""feature"">
+            <img src=""../images/feature2.png"" alt=""Feature 2"">
+            <h2>Feature 2</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <div class=""feature"">
+            <img src=""../images/feature3.png"" alt=""Feature 3"">
+            <h2>Feature 3</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+    </section>
+
+    <section id=""about"">
+        <div class=""about-content"">
+            <h2>About Us</h2>
+            <p>Learn more about our company and how we're making a difference in the industry.</p>
+            <a href=""#contact"" class=""cta-button"">Learn More</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</body>
+</html>";
+    }
+
+    #endregion
+
+
+    #region css template
     public static string Csstp()
     {
         return @"
@@ -298,75 +370,12 @@ footer {
 ";
     }
 
-    public static string HtmlGPTtp()
+    #endregion
+
+    #region js template
+    public static string jstp(string img1, string img2, string img3)
     {
-        return @"<!DOCTYPE html>
-<html lang=""en"">
-<head>
-    <meta charset=""UTF-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
-    <title>Your Landing Page</title>
-    <link rel=""stylesheet"" href=""./magasinfleurs.css"">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class=""logo"">
-                <h1>Your Logo</h1>
-            </div>
-            <ul class=""nav-links"">
-                <li><a href=""#features"">Features</a></li>
-                <li><a href=""#about"">About</a></li>
-                <li><a href=""#contact"">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id=""hero"">
-        <div class=""hero-content"">
-            <h1>Massa tincidunt dui ut ornare molestie nunc.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href=""#contact"" class=""cta-button"">Get Started</a>
-        </div>
-    </section>
-
-    <section id=""feature1"">
-        <div class=""feature1-content"">
-            <h2>Feature 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
-        </div>
-        <div class=""feature1-image"">
-            <img src=""../images/businessman.png"" alt=""About"">
-        </div>
-    </section>
-
-    <section id=""feature2"">
-        <img src=""../images/businessman.png"" alt=""About"">
-        <div class=""about-content2"">
-            <h2>Feature 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
-        </div>
-    </section>
-
-    <section id=""feature3"">
-        <div class=""feature1-content"">
-            <h2>Feature 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet bibendum sem, eu interdum nulla cursus a.</p>
-        </div>
-        <div class=""feature1-image"">
-            <img src=""../images/businessman.png"" alt=""About"">
-        </div>
-    </section>
-
-    <section id=""contact"">
-        <h2>Contact Us</h2>
-        <a class=""cta-button"">Get Started</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Your Company</p>
-    </footer>
-</body>
-</html>";
+        return $@"document.getElementById('img1').src="img1"; document.getElementById('img2').src="img2"; document.getElementById('img3').src="img3";";
     }
+    #endregion
 }
