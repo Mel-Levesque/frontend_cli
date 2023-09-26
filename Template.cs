@@ -50,7 +50,9 @@ public static class Template
     </section>
 
     <section id=""feature2"">
-        <img src=""imageARemplacer2"" alt=""About"">
+        <div class=""feature1-image"">
+            <img src=""imageARemplacer2"" alt=""About"">
+        </div>
         <div class=""about-content2"">
             <h2>Feature 2</h2>
             <p id=""p2"">Le sport transcende les frontières et les cultures, unifiant les individus dans la passion du mouvement et de l'excellence. Il incarne la discipline, le dévouement et la persévérance. Que ce soit sur un terrain de football, dans une piscine olympique, sur un court de tennis ou dans un stade de basketball, le sport est un véritable spectacle d'efforts humains et de compétition loyale. Il enseigne des leçons de vie inestimables telles que le travail d'équipe, la gestion du stress et la résilience.</p>
@@ -240,6 +242,10 @@ nav {
     flex-basis: 30%;
 }
 
+.feature img {
+
+}
+
 #feature2 {
     display: flex;
     align-items: center;
@@ -253,6 +259,7 @@ nav {
 
 #feature2 .about-content2 {
     height: 100%;
+    width: 60%;
 }
 
 .feature img {
@@ -268,12 +275,15 @@ nav {
     display: flex;
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
+    width: 100%;
+    flex-direction: row;
 }
 
 .feature1-content {
     max-width: 600px; /* Adjust the width as needed */
     text-align: left; /* Align text to the left */
     margin-right: 20px; /* Add space between text and image */
+    width: 60%;
 }
 .about-content2 {
     max-width: 600px; /* Adjust the width as needed */
@@ -283,6 +293,12 @@ nav {
 
 .feature1-image {
     max-width: 400px; /* Adjust the width as needed */
+    width: 40%;
+}
+
+.feature1-image img {
+    object-fit: contain;
+    width: 100%;
 }
 
 /* Responsive design for smaller screens */
