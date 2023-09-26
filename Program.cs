@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Text.RegularExpressions;
 
-namespace microsoft.botsay;
+namespace mjj;
 internal class Program
 {
     static async Task Main(string[] args)
@@ -44,7 +44,6 @@ internal class Program
             chat.AppendSystemMessage("Tu es un expert html qui remplace tous les textes en latin, Lorem ipsum, en anglais, les titres et noms de fonctionnalités par du texte en français correspondant au thème donné. Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'>.");
             chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + contenu + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'> template:" + templateString);
             string response = await chat.GetResponseFromChatbotAsync();
-            Console.WriteLine(response);
             File.WriteAllText(path, response);
 
             string cheminFichier = "./projects/" + projectName + "/" + projectName + ".html";
@@ -88,15 +87,7 @@ internal class Program
         string cheminFichier = "./projects/" + projectName + "/" + projectName + ".html";
 
         string contenuHtml = Template.Htmltp(projectName);
-        try
-        {
-            File.WriteAllText(cheminFichier, contenuHtml);
-            Console.WriteLine($"Fichier HTML '{cheminFichier}' créé avec succès.");
-        }
-        catch (IOException e)
-        {
-            Console.WriteLine($"Une erreur s'est produite : {e.Message}");
-        }
+        File.WriteAllText(cheminFichier, contenuHtml);
     }
 
     static void cssTemplate(string projectName)
@@ -105,15 +96,7 @@ internal class Program
 
         string contenuCss = Template.Csstp();
 
-        try
-        {
-            File.WriteAllText(cheminFichier, contenuCss);
-            Console.WriteLine($"Fichier Css '{cheminFichier}' créé avec succès.");
-        }
-        catch (IOException e)
-        {
-            Console.WriteLine($"Une erreur s'est produite : {e.Message}");
-        }
+        File.WriteAllText(cheminFichier, contenuCss);
     }
 
     static void javascriptTemplate(string projectName)
@@ -124,18 +107,7 @@ internal class Program
             window.alert('Hello world!');
         }
         ";
-
-        //string contenuCss = Template.JsTp();
-
-        try
-        {
-            File.WriteAllText(cheminFichier, contenuJs);
-            Console.WriteLine($"Fichier Css '{cheminFichier}' créé avec succès.");
-        }
-        catch (IOException e)
-        {
-            Console.WriteLine($"Une erreur s'est produite : {e.Message}");
-        }
+        File.WriteAllText(cheminFichier, contenuJs);
     }
 
     //Create sub Folder in 'projects' folder with the project name
