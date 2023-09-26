@@ -1,4 +1,4 @@
-const { exec } = require('child_process')
+import { exec } from 'child_process'
 
 document.addEventListener('DOMContentLoaded', function () {
   // Get a reference to the button element by its ID
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function CLICommand (projectName, projectDesc) {
+    console.log('COMMAND EXECUTE')
     const command = 'mjj ' + projectName + ' ' + projectDesc
 
     exec(command, (error, stdout, stderr) => {
