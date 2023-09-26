@@ -20,21 +20,35 @@ internal class Program
         cssTemplate(projectName);
         javascriptTemplate(projectName);
         htmlTemplate(projectName, contenu);
+        await OpenApiData(projectName, words);
+    }
+
+    static async Task OpenApiData(string projectName, string[] words)
+    {
+        // Nom de la variable d'environnement que vous souhaitez récupérer
+        string variableName = "CHAT_GPT_KEY";
 
         // Récupérer la valeur de la variable d'environnement
-        /* string? variableValue = Environment.GetEnvironmentVariable("CHAT_GPT_KEY");
+        string? variableValue = Environment.GetEnvironmentVariable(variableName);
 
         if (variableValue != null)
         {
             OpenAIAPI api = new OpenAIAPI(variableValue);
             var chat = api.Chat.CreateConversation();
-            //chat.AppendSystemMessage("What is the number after 10 ?");
-            /* chat.AppendUserInput("Give me a picture of flowers");
+            string path = "./projects/" + projectName + "/" + projectName + ".html";
+            string templateString = File.ReadAllText(path);
+            chat.AppendSystemMessage("Tu es un expert html qui remplace tous les textes en latin, Lorem ipsum, en anglais et les titres par du texte en français correspondant au thème donné. Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'>.");
+            chat.AppendUserInput("A partir de ce template, génère le texte (qui remplace le Lorem ipsum) et les images correspondants au produit suivant: " + words[2] + ". Ne répond que du code, pas autre chose. Ne pas changer <link rel='stylesheet' href='./{filename}.css'> template:" + templateString);
             string response = await chat.GetResponseFromChatbotAsync();
-            Console.WriteLine(response); */
-            /*var result = await api.ImageGenerations.CreateImageAsync("A pack of flowers");
-            Console.WriteLine(result.Data[0].Url);
-        } */
+            Console.WriteLine(response);
+            File.WriteAllText(path, response);
+            //var result = await api.ImageGenerations.CreateImageAsync("A drawing of a flowers");
+            //Console.WriteLine(result.Data[0].Url);
+        }
+        else
+        {
+            Console.WriteLine($"La variable d'environnement {variableName} n'est pas définie.");
+        }
     }
 
     static void htmlTemplate(string projectName, string contenu)
