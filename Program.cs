@@ -64,24 +64,24 @@ internal class Program
             Match match3 = regex3.Match(contenuFichier);
             string p3 = match3.Groups[1].Value;
         
-            var logo = await api.ImageGenerations.CreateImageAsync("Find me an logo in url related to this theme : " + projectName);
+            var logo = await api.ImageGenerations.CreateImageAsync("Find me an logo web related to this theme : " + projectName);
             string logo1 = logo.Data[0].Url;
             contenuFichier = contenuFichier.Replace(@"<h1>Votre Logo</h1>", $@"<img src={logo} alt=""About"">");
             File.WriteAllText(cheminFichier, contenuFichier);
 
-            var image1 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p1);
+            var image1 = await api.ImageGenerations.CreateImageAsync("Find me an image web related to this paragraph : " + p1);
             string url1 = image1.Data[0].Url;
-            contenuFichier = contenuFichier.Replace(@"src=""cheminImage1""", @"src='"+ url1 +"'");
+            contenuFichier = contenuFichier.Replace(@"src=""imageARemplacer1""", @"src='"+ url1 +"'");
             File.WriteAllText(cheminFichier, contenuFichier);
 
-            var image2 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p2);
+            var image2 = await api.ImageGenerations.CreateImageAsync("Find me an image web related to this paragraph : " + p2);
             string url2 = image2.Data[0].Url;
-            contenuFichier = contenuFichier.Replace(@"src=""cheminImage2""", @"src='"+ url2 +"'");
+            contenuFichier = contenuFichier.Replace(@"src=""imageARemplacer2""", @"src='"+ url2 +"'");
             File.WriteAllText(cheminFichier, contenuFichier);
 
-            var image3 = await api.ImageGenerations.CreateImageAsync("Find me an image in url related to this paragraph : " + p3);
+            var image3 = await api.ImageGenerations.CreateImageAsync("Find me an image web related to this paragraph : " + p3);
             string url3 = image3.Data[0].Url;
-            contenuFichier = contenuFichier.Replace(@"src=""cheminImage3""", @"src='"+ url3 +"'");
+            contenuFichier = contenuFichier.Replace(@"src=""imageARemplacer3""", @"src='"+ url3 +"'");
             File.WriteAllText(cheminFichier, contenuFichier);
         }
     }
