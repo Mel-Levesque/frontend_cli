@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="../controller/index.js"></script>
+    <title>Bonjour depuis le rendu d'Electron !</title>
+  </head>
+  <body>
+    <h1>Bienvenue sur l'outil de création MJJ 👋</h1>
+    <div class="grid">
+        <div class="grid-item a" id="createProjectButton">
+            Créer un nouveau projet
+        </div>
+        <div class="grid-item b">
+            projet 1
+        </div>
+        <div class="grid-item c">
+            projet 2
+        </div>
+    </div>
+  </body>
+</html>
