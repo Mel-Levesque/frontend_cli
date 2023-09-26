@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="../controller/newProject.js"></script>
+    <script src="./dist/bundle.js"></script>
+    <title>Générer un nouveau projet</title>
+  </head>
+  <body>
+    <h1>Bienvenue sur l'outil de création MJJ 👋</h1>
+    <button id="back">Retour</button>
+    <form>
+        <label for="projectName">Nom du projet: </label>
+        <input id="projectName" type="text" placeholder="leMarcheAuxFleurs"/>
+        <label for="projectDesc">Description du projet: </label>
+        <input id="projectDesc" type="text" placeholder="Un magasin de fleurs ..."/>
+        <button id="createProject">Créer</button>
+    </form>
+  </body>
+</html>
