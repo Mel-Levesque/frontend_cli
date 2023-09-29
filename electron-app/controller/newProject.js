@@ -1,4 +1,7 @@
-import { exec } from 'child_process'
+//const { ipcRenderer } = require('electron');
+const { exec } = window.require('child_process');
+const remote = require('@electron/remote');
+const { dialog } = remote;
 
 document.addEventListener('DOMContentLoaded', function () {
   // Get a reference to the button element by its ID
@@ -15,25 +18,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function createProject () {
     // get form infos
-    const projectName = document.getElementById('projectName').value
+    let projectName = document.getElementById('projectName').value
     const projectDesc = document.getElementById('projectDesc').value
-    // check info
-    if (projectName !== undefined && projectName !== '') {
+    const errorMessage = document.getElementById('errorMessage');
+
+    //test spacial characters excluding '-' and '_'
+    //if false there are no special characters
+    //var regex = /[^a-zA-Z0-9_\-]/;
+    var regex = /[!@#$%^&*()_+={}\[\]:;<>,.?~\\|]/;
+    // check infos
+    if (projectName !== undefined && projectName !== '' && !regex.test(projectName)) {
+      console.log(regex.test(projectName));
       if (projectDesc !== undefined && projectDesc !== '') {
-        // replace all spaces by unerscore
-        const name = projectName.replace(/\s+/g, '_')
-        if (name.charAt(name.length - 1) === '_') {
-          name.slice(0, -1)
+        // replace all spaces in projectName by unerscore (because of the cli)
+        projectName = projectName.replace(/\s+/g, '_')
+        if (projectName.charAt(projectName.length - 1) === '_') {
+          projectName.slice(0, -1)
         }
         // CLI command
-        console.log('ça fonctionne')
         CLICommand(projectName, projectDesc)
+      }else{
+        dialog.showErrorBox("Erreur","La description du projet ne peut pas être vide");
       }
+    }else{
+      dialog.showErrorBox("Erreur","La description du projet ne peut pas être vide");
     }
   }
 
   function CLICommand (projectName, projectDesc) {
-    console.log('COMMAND EXECUTE')
+    //RunCommand().executeCommand();
     const command = 'mjj ' + projectName + ' ' + projectDesc
 
     exec(command, (error, stdout, stderr) => {
@@ -47,5 +60,19 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error(`Command error:\n${stderr}`)
       }
     })
+
+    //dialog.showMessageBox("Super!", "Template créé avec succès !");
+    const options = {
+      type: 'question',
+      buttons: ['Ok'],
+      defaultId: 2,
+      title: 'Super !',
+      message: 'Template créé avec succès !'
+    };
+  
+    dialog.showMessageBox(null, options, (response) => {
+      console.log(response);
+    });
+    location.reload();
   }
 })

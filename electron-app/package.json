@@ -2,7 +2,7 @@
   "name": "electron-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "newProject.js",
   "scripts": {
     "start": "electron main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,13 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.11",
+    "ag-grid-community": "^30.2.0",
+    "babel-preset-latest": "^6.24.1",
+    "child_process": "^1.0.2",
+    "gridjs": "^6.0.6",
+    "on-change": "^4.0.2"
   }
 }

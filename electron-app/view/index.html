@@ -12,7 +12,7 @@
       content="default-src 'self'; script-src 'self'"
     />
     <link rel="stylesheet" href="../style/index.css">
-    <script src="../controller/index.js"></script>
+    <script type="module" src="../controller/index.js"></script>
     <title>Bonjour depuis le rendu d'Electron !</title>
   </head>
   <body>
@@ -21,12 +21,15 @@
         <div class="grid-item a" id="createProjectButton">
             Créer un nouveau projet
         </div>
-        <div class="grid-item b">
+        <!-- <div class="grid-item b">
             projet 1
         </div>
         <div class="grid-item c">
             projet 2
-        </div>
+        </div> -->
     </div>
+
+    <!-- <div id="gridJs" class="grid"></div> -->
+    <div id="grid-container"></div>
   </body>
 </html>

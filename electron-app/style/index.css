@@ -1,3 +1,39 @@
+body {
+    /* position: relative; */
+    color: white;
+    height: 100vh;
+    background: linear-gradient(
+      200.96deg,
+      #fedc2a -29.09%,
+      #dd5789 51.77%,
+      #7a2c9e 129.35%
+    );
+    font-family: sans-serif;
+    overflow-y: scroll;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+  
+  button {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    font-size: 1.3rem;
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+      0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    transition: all ease-in 0.1s;
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
 .card{
     border-radius: 5%;
 }
@@ -14,8 +50,8 @@
 
 .grid {
     display: grid;
-    grid-template-areas: "a a a a a"
-                         "b c d e f";
+    grid-template-areas: "a a a"
+                         "b c d";
   }
 
 .grid-item {
@@ -24,8 +60,9 @@
     border: 2px solid #fff;
     text-align:center;
     font-size:35px;
-    border-radius: 5%;
+    border-radius: 1em;
     transition: 0.5s;
+    margin: 1em;
 }
 
 .grid-item:hover {
@@ -37,6 +74,7 @@
 .a {
     grid-area: a;
     background-color: antiquewhite;
+    color: black;
   }
 
 .a:hover{
@@ -45,13 +83,80 @@
     cursor: pointer;
 }
 
-button{
-    background-color: antiquewhite;
-    border-radius: 5%;
+.b{
+    grid-area: b;
 }
 
-button:hover{
-    background-color: black;
-    color: antiquewhite;
-    border-radius: 5%;
+.c{
+    grid-area: c;
+}
+
+/** index.html grid **/
+
+#grid {
+  width: 100%;
+  flex: 1;
+}
+
+#grid-container {
+  max-width: 100%;
+  margin: 2em;
+  padding: 20px;
+}
+  
+.gridjs {
+  width: 100%;
+}
+  
+.gridjs-th {
+  background-color: #007BFF;
+  color: #fff;
+  font-weight: bold;
+}
+  
+.gridjs-tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+  
+.gridjs-tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+  
+.gridjs-td {
+  padding: 12px;
+  text-align: center;
+  background: rgb(114, 44, 81);
+  padding: 1em;
+  border: 2px solid #fff;
+  text-align: center;
+  font-size: 35px;
+  border-radius: 1em;
+  transition: 0.5s;
+  margin: 4em;
+}
+
+.gridjs-td:hover{
+  background-color:#dd5789;
+  cursor: pointer;
+}
+  
+.gridjs-tr {
+  background-color: #007BFF;
+}
+
+/** newProject **/
+input {
+    display: block;
+    width: 100%;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0.3em;
 }

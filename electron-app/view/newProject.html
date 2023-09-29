@@ -13,17 +13,40 @@
     />
     <link rel="stylesheet" href="../style/index.css">
     <script type="module" src="../controller/newProject.js"></script>
+    <webview src="newProject.html" preload="../preload.js"></webview>
     <title>Générer un nouveau projet</title>
   </head>
   <body>
     <h1>Bienvenue sur l'outil de création MJJ 👋</h1>
     <button id="back">Retour</button>
+    <!-- <form class="grid">
+        <h3 class="errorMessage" id="errorMessage"></h3>
+        <div>
+          <label for="projectName">Nom du projet: </label>
+          <input class="grid-item b" id="projectName" type="text" placeholder="leMarcheAuxFleurs"/>
+        </div>
+        <div>
+          <label for="projectDesc">Description du projet: </label>
+          <input class="grid-item e" id="projectDesc" type="text" placeholder="Un magasin de fleurs ..."/>
+        </div>
+        <button type="submit" id="createProject">Créer</button>
+    </form> -->
+
     <form>
-        <label for="projectName">Nom du projet: </label>
-        <input id="projectName" type="text" placeholder="leMarcheAuxFleurs"/>
-        <label for="projectDesc">Description du projet: </label>
-        <input id="projectDesc" type="text" placeholder="Un magasin de fleurs ..."/>
-        <button id="createProject">Créer</button>
+      <ul>
+        <li>
+          <label for="projectName">Nom du projet: </label>
+          <input id="projectName" type="text" placeholder="leMarcheAuxFleurs"/>
+        </li>
+        <li>
+          <label for="projectDesc">Description du projet: </label>
+          <input id="projectDesc" type="text" placeholder="Un magasin de fleurs ..."/>
+        </li>
+        
+        <li>
+            <button type="button" id="createProject">Créer</button>
+        </li>
+      </ul>
     </form>
   </body>
 </html>
