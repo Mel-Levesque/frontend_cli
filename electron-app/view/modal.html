@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../controller/module.js"></script>
     <title>Modal</title>
 </head>
 <body>
-    <button id="retourButton">Retour</button>
-    <iframe id="modalIframe" src="../projects/cmdkhgmws/cmdkhgmws.html"></iframe>
+    <div id="content">
+        <iframe id="modalIframe" src=""></iframe>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('modalIframe').src = localStorage.getItem('projectUrl');
+        });
+      </script>
     <style>
         /* Style the modal */
         body {
@@ -19,7 +26,7 @@
             height: 100%;
             border: none;
         }
-        #retourButton {
+        #backBtn {
             top: 10px;
             left: 10px;
             background-color: #007bff;
@@ -27,6 +34,15 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
+        }
+        body, html
+        {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+        }
+
+        #content
+        {
+            position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
         }
     </style>
 </body>
